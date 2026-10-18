@@ -1,0 +1,19 @@
+pkgbase = marble-support
+	pkgdesc = Hardware support layer for Xiaomi POCO F5 / Redmi Note 12 Turbo
+	pkgver = r1.0156b22
+	pkgrel = 1
+	url = https://github.com/iLtanaka/marble-device-support
+	arch = aarch64
+	license = GPL-2.0-or-later
+	license = MIT
+	depends = alsa-ucm-conf
+	depends = hexagonrpcd
+	depends = iio-sensor-proxy
+	depends = libssc
+	depends = rmtfs
+	depends = util-linux
+	optdepends = phosh: recommended mobile shell
+	source = marble-support-0156b222de9def538a0cf297c8419195441f4db4.tar.gz::https://github.com/iLtanaka/marble-device-support/archive/0156b222de9def538a0cf297c8419195441f4db4.tar.gz
+	sha256sums = cf408e9f0e17c13e3b4dc77420024d58909432161524732a7d25a017fb947b61
+
+pkgname = marble-support
