@@ -1,7 +1,7 @@
 # Maintainer: hiruocha <hiruocha[at]outlook[dot]com>
 
 pkgname=marble-support
-pkgver=r1.0156b22
+pkgver=r2.abdc582
 pkgrel=1
 pkgdesc="Hardware support layer for Xiaomi POCO F5 / Redmi Note 12 Turbo"
 arch=('aarch64')
@@ -11,10 +11,10 @@ license=('GPL-2.0-or-later' 'MIT')
 depends=('alsa-ucm-conf' 'hexagonrpcd' 'iio-sensor-proxy' 'libssc' 'rmtfs'
          'util-linux')
 
-_commit=0156b222de9def538a0cf297c8419195441f4db4
+_commit=abdc582cf50f522957a7df61aa5e9989d41b6b48
 
 source=("$pkgname-$_commit.tar.gz::$url/archive/$_commit.tar.gz")
-sha256sums=('cf408e9f0e17c13e3b4dc77420024d58909432161524732a7d25a017fb947b61')
+sha256sums=('d9ea5b25876fe32d0f707a56d3ceccc86a36286c3405a351b48e248309f012b2')
 
 prepare() {
   cd "$srcdir/marble-device-support-$_commit"
@@ -46,6 +46,8 @@ package() {
     "$pkgdir/usr/lib/udev/rules.d/61-marble-gpu.rules"
   install -Dm644 udev/81-libssc-xiaomi-marble.rules \
     "$pkgdir/usr/lib/udev/rules.d/81-libssc-xiaomi-marble.rules"
+  install -Dm644 udev/90-iio-sensor-proxy-ssc-accel-proximity.rules \
+    "$pkgdir/usr/lib/udev/rules.d/90-iio-sensor-proxy-ssc-accel-proximity.rules"
 
   install -Dm644 sysctl/99-marble-vm.conf \
     "$pkgdir/usr/lib/sysctl.d/99-marble-vm.conf"
